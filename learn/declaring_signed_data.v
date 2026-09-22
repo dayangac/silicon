@@ -1,5 +1,5 @@
 // declaring signed data
-module signed_demo:
+module signed_demo;
 	reg signed[7:0] a = -5;
 	reg [7:0] u = 8'hFB; // h is for hex
 	reg signed [15:0] w;
