@@ -1,0 +1,75 @@
+#! /opt/homebrew/Cellar/icarus-verilog/13.0/bin/vvp
+:ivl_version "13.0 (stable)" "(v13_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/va_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/13.0/lib/ivl/v2009.vpi";
+S_0x104bf1e90 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x104bf0be0 .scope module, "tb_add8" "tb_add8" 3 11;
+ .timescale 0 0;
+v0x104bf9620_0 .var "a", 7 0;
+v0xb11068000_0 .var "b", 7 0;
+v0xb110680a0_0 .net "cout", 0 0, L_0x104bf96c0;  1 drivers
+v0xb11068140_0 .net "sum", 7 0, L_0x104bf9760;  1 drivers
+S_0x104bf0d60 .scope module, "dut" "add8" 3 17, 3 1 0, S_0x104bf0be0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 8 "a";
+    .port_info 1 /INPUT 8 "b";
+    .port_info 2 /OUTPUT 8 "sum";
+    .port_info 3 /OUTPUT 1 "cout";
+L_0xb10854058 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x104bf8b20_0 .net *"_ivl_10", 0 0, L_0xb10854058;  1 drivers
+v0x104bf8bc0_0 .net *"_ivl_11", 8 0, L_0x104bf9940;  1 drivers
+v0x104bf8c60_0 .net *"_ivl_3", 8 0, L_0x104bf9800;  1 drivers
+L_0xb10854010 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x104bf9260_0 .net *"_ivl_6", 0 0, L_0xb10854010;  1 drivers
+v0x104bf9300_0 .net *"_ivl_7", 8 0, L_0x104bf98a0;  1 drivers
+v0x104bf93a0_0 .net "a", 7 0, v0x104bf9620_0;  1 drivers
+v0x104bf9440_0 .net "b", 7 0, v0xb11068000_0;  1 drivers
+v0x104bf94e0_0 .net "cout", 0 0, L_0x104bf96c0;  alias, 1 drivers
+v0x104bf9580_0 .net "sum", 7 0, L_0x104bf9760;  alias, 1 drivers
+L_0x104bf96c0 .part L_0x104bf9940, 8, 1;
+L_0x104bf9760 .part L_0x104bf9940, 0, 8;
+L_0x104bf9800 .concat [ 8 1 0 0], v0x104bf9620_0, L_0xb10854010;
+L_0x104bf98a0 .concat [ 8 1 0 0], v0xb11068000_0, L_0xb10854058;
+L_0x104bf9940 .arith/sum 9, L_0x104bf9800, L_0x104bf98a0;
+    .scope S_0x104bf0be0;
+T_0 ;
+    %pushi/vec4 10, 0, 8;
+    %store/vec4 v0x104bf9620_0, 0, 8;
+    %pushi/vec4 20, 0, 8;
+    %store/vec4 v0xb11068000_0, 0, 8;
+    %delay 1, 0;
+    %vpi_call/w 3 21 "$display", "%3d + %3d  ->  sum = %3d, cout = %b", v0x104bf9620_0, v0xb11068000_0, v0xb11068140_0, v0xb110680a0_0 {0 0 0};
+    %pushi/vec4 165, 0, 8;
+    %store/vec4 v0x104bf9620_0, 0, 8;
+    %pushi/vec4 107, 0, 8;
+    %store/vec4 v0xb11068000_0, 0, 8;
+    %delay 1, 0;
+    %vpi_call/w 3 24 "$display", "%3d + %3d  ->  sum = %3d, cout = %b", v0x104bf9620_0, v0xb11068000_0, v0xb11068140_0, v0xb110680a0_0 {0 0 0};
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x104bf9620_0, 0, 8;
+    %pushi/vec4 1, 0, 8;
+    %store/vec4 v0xb11068000_0, 0, 8;
+    %delay 1, 0;
+    %vpi_call/w 3 27 "$display", "%3d + %3d  ->  sum = %3d, cout = %b", v0x104bf9620_0, v0xb11068000_0, v0xb11068140_0, v0xb110680a0_0 {0 0 0};
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0x104bf9620_0, 0, 8;
+    %pushi/vec4 255, 0, 8;
+    %store/vec4 v0xb11068000_0, 0, 8;
+    %delay 1, 0;
+    %vpi_call/w 3 30 "$display", "%3d + %3d  ->  sum = %3d, cout = %b", v0x104bf9620_0, v0xb11068000_0, v0xb11068140_0, v0xb110680a0_0 {0 0 0};
+    %vpi_call/w 3 32 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "-";
+    "add8.v";
