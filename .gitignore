@@ -1,0 +1,18 @@
+# Chisel / Scala workspace — kept local only
+chisel/
+
+# Compiled simulation output
+*.vvp
+*.vcd
+*.fst
+*.ghw
+*.lxt
+*.lxt2
+a.out
+obj_dir/
+sim_build/
+results.xml
+__pycache__/
+
+# macOS
+.DS_Store
